@@ -1,0 +1,26 @@
+﻿@model WebApplication3.Models.Course
+@{
+    ViewBag.Title = "Course";
+}
+
+<h1>Course and Student</h1>
+<h4>Course Name: @Model.cname</h4>
+<h4>Course Hours: @Model.hours</h4>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Mark</th>
+        <th>Grade</th>
+    </tr>
+    @foreach (var item in Model.liStudent)
+    {
+        <tr>
+            <td>@item.name</td>
+            <td>@item.age</td>
+            <td>@item.mark</td>
+            <td>@item.grade</td>
+        </tr>
+    }
+</table>

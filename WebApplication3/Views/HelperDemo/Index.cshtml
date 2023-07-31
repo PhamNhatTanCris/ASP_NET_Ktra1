@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Display", "HelperDemo"))
+{
+    @Html.Label("Ho ten")
+    @Html.TextBox("name")
+    <br />
+
+    @Html.Label("Tuoi")
+    @Html.TextBox("age")
+    <br />
+    <input type="submit" value="OK" />
+    <input type="reset" value="Cancel" />
+
+}
+

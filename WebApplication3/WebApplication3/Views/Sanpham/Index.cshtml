@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebApplication3.Models.Sanpham>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table class="table-bordered" width="500">
+    <tr style="background-color:#ffffcc">
+        <td>Mã sản phẩm</td>
+        <td>Tên sản phẩm</td>
+        <td>Số lượng</td>
+
+    </tr>
+    @{
+        List<WebApplication3.Models.Sanpham> ds = new List<WebApplication3.Models.Sanpham>();
+        foreach (var item in Model)
+        {
+            <tr>
+                <td align="center">@item.masp</td>
+                <td align="center">@item.tensp</td>
+                <td align="center">@item.soluong</td>
+            </tr>
+            ds.Add(new WebApplication3.Models.Sanpham(@item.masp, @item.tensp, @item.soluong));
+
+        }
+    }
+
+</table>
+<br />
+
+@TempData["li"] = @ds;
+<br />
+Count of list is: @ds.Count
+<br />
+@{
+    List<WebApplication3.Models.Sanpham> d = (List<WebApplication3.Models.Sanpham>)TempData["li"];    
+
+}
+Count of TempData is @d.Count;
+@{
+    int x = Convert.ToInt16(TempData["msg"]);
+    TempData["msg"] = x + 1;
+}
+<br />
+        Count of msg = @x;
+
+        <br />
+        @Html.ActionLink("Them", "FormAdd", "Sanpham")
+        <br />

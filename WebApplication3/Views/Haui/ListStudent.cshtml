@@ -1,0 +1,79 @@
+﻿@using WebApplication3.Models
+@model IEnumerable<WebApplication3.Models.Student>
+
+@{
+    ViewBag.Title = "ListStudent";
+
+    List<Student> li1 = ViewBag.li1;
+    List<Student> li2 = ViewBag.li2;
+}
+
+<style>
+    table{
+        width:50%;
+        border-collapse:collapse;
+       
+    }
+    td,th {
+        padding: 5px;
+        border: solid 1px black;
+    }
+</style>
+<h2>List All</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Mark</th>
+        <th>Grade</th>
+    </tr>
+    @foreach (var item in @Model)
+    {
+        <tr>
+            <td>@item.name</td>
+            <td>@item.age</td>
+            <td>@item.mark</td>
+            <td>@item.grade</td>
+        </tr>
+    }
+</table>
+
+<h2>List Student Pass</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Mark</th>
+        <th>Grade</th>
+    </tr>
+    @foreach (var item in li1)
+    {
+        <tr>
+            <td>@item.name</td>
+            <td>@item.age</td>
+            <td>@item.mark</td>
+            <td>@item.grade</td>
+        </tr>
+    }
+</table>
+
+<h2>List Student Fail</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Mark</th>
+        <th>Grade</th>
+    </tr>
+    @foreach (var item in li2)
+    {
+        <tr>
+            <td>@item.name</td>
+            <td>@item.age</td>
+            <td>@item.mark</td>
+            <td>@item.grade</td>
+        </tr>
+    }
+</table>
+

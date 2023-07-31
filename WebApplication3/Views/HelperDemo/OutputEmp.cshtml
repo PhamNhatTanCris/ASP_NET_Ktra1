@@ -1,0 +1,58 @@
+﻿@model WebApplication3.Models.Emp
+
+@{
+    ViewBag.Title = "OutputEmp";
+}
+
+<h2>OutputEmp</h2>
+
+<div>
+    <h4>Emp</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numberdaywork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numberdaywork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.commision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.commision)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

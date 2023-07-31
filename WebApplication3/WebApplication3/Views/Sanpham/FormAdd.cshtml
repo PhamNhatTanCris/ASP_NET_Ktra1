@@ -1,0 +1,37 @@
+﻿@model WebApplication3.Models.Sanpham
+@{
+    ViewBag.Title = "FormAdd";
+}
+
+<h2>FormAdd</h2>
+<form method="post" action="add">
+    masp <input type="text" name="masp" /><br />
+    tensp <input type="text" name="tensp" /><br />
+    soluong <input type="text" name="soluong" /><br />
+    <input type="submit" value="them" />
+</form>
+<br />
+@{
+List<WebApplication3.Models.Sanpham> ds = (List<WebApplication3.Models.Sanpham>)TempData["li"];
+
+    foreach (var item in ds)
+    {
+
+        <tr>
+
+            <td align="center">@item.masp</td>
+            <td align="center">@item.tensp</td>
+            <td align="center">@item.soluong</td>
+        </tr>
+    }
+}
+<br />
+
+@{
+    int x = Convert.ToInt16(TempData["msg"]);
+
+    TempData["msg"] = x + 1; ;
+}
+Msg = @x;
+<br />
+
